@@ -14,7 +14,6 @@ public class OgrenciController {
     @Autowired
     private OgrenciService ogrenciService;
 
-    // Tüm kullanıcılar (müdür veya öğretmen) erişebilir
     @GetMapping("/ogrenciler")
     public String ogrenciListesi(HttpSession session, Model model) {
         if (session.getAttribute("rol") == null) return "redirect:/login";
@@ -22,7 +21,6 @@ public class OgrenciController {
         return "ogrenciler";
     }
 
-    // Sadece müdür yeni öğrenci ekleyebilir
     @GetMapping("/ogrenci/ekle")
     public String ogrenciEkleForm(HttpSession session, Model model) {
         if (!"mudur".equals(session.getAttribute("rol"))) return "redirect:/login";
@@ -37,7 +35,6 @@ public class OgrenciController {
         return "redirect:/ogrenciler";
     }
 
-    // Sadece müdür silebilir
     @GetMapping("/ogrenci/sil/{id}")
     public String ogrenciSil(HttpSession session, @PathVariable Long id) {
         if (!"mudur".equals(session.getAttribute("rol"))) return "redirect:/login";
@@ -59,7 +56,6 @@ public class OgrenciController {
         return "redirect:/ogrenciler";
     }
 
-    // Müdür ve öğretmen erişebilir
     @GetMapping("/ogrenciye-not-ekle")
     public String notEkleForm(HttpSession session, Model model) {
         String rol = (String) session.getAttribute("rol");
@@ -80,7 +76,7 @@ public class OgrenciController {
         return "redirect:/ogrenciler";
     }
 
-    // Müdür ve öğretmen erişebilir
+
     @GetMapping("/ogrenci-not-guncelle")
     public String notGuncelleForm(@RequestParam(value = "ogrenciId", required = false) Long ogrenciId, Model model) {
         model.addAttribute("ogrenciler", ogrenciService.findAll());

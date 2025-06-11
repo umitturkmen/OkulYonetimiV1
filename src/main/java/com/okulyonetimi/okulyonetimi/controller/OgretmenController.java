@@ -14,7 +14,6 @@ public class OgretmenController {
     @Autowired
     private OgretmenService ogretmenService;
 
-    // Öğretmen menüsü (rollerle basit kontrol!)
     @GetMapping("/ogretmen/menu")
     public String ogretmenMenu(HttpSession session) {
         if (!"ogretmen".equals(session.getAttribute("rol"))) {
@@ -23,7 +22,6 @@ public class OgretmenController {
         return "ogretmen_menu";
     }
 
-    // Öğretmen listesi (müdür ve ogretmen erişebilir)
     @GetMapping("/ogretmenler")
     public String ogretmenListesi(HttpSession session, Model model) {
         if (session.getAttribute("rol") == null) {
@@ -33,7 +31,6 @@ public class OgretmenController {
         return "ogretmenler";
     }
 
-    // Öğretmen ekle (sadece müdür ekleyebilir)
     @GetMapping("/ogretmen/ekle")
     public String ogretmenEkleForm(HttpSession session, Model model) {
         if (!"mudur".equals(session.getAttribute("rol"))) {
@@ -52,7 +49,6 @@ public class OgretmenController {
         return "redirect:/ogretmenler";
     }
 
-    // Öğretmen sil (sadece müdür)
     @GetMapping("/ogretmen/sil-sec")
     public String ogretmenSilSec(HttpSession session, Model model) {
         if (!"mudur".equals(session.getAttribute("rol"))) {

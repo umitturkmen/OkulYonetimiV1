@@ -11,6 +11,6 @@ public class MudurController {
         if (!"mudur".equals(session.getAttribute("rol"))) {
             return "redirect:/login";
         }
-        return "mudur_menu"; // templates/mudur_menu.html
+        return "mudur_menu";
     }
 }

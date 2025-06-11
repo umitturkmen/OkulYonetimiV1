@@ -16,7 +16,7 @@ public class LoginController {
 
     @GetMapping({"/", "/login"})
     public String loginForm(HttpSession session) {
-        // Eğer zaten giriş yapılmışsa direkt menüye yönlendir
+
         String rol = (String) session.getAttribute("rol");
         if ("mudur".equals(rol)) {
             return "redirect:/mudur/menu";
@@ -33,12 +33,12 @@ public class LoginController {
             Model model,
             HttpSession session
     ) {
-        // Müdür için örnek sabit kullanıcı (dilersen DB'ye ekle)
+
         if ("mudur".equals(kullaniciAdi) && "1234".equals(sifre)) {
             session.setAttribute("rol", "mudur");
             return "redirect:/mudur/menu";
         }
-        // Öğretmen login
+
         Ogretmen ogretmen = ogretmenService.login(kullaniciAdi, sifre);
         if (ogretmen != null) {
             session.setAttribute("rol", "ogretmen");

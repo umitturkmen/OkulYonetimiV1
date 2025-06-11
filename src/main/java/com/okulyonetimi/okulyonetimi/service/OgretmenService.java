@@ -28,7 +28,6 @@ public class OgretmenService {
         return ogretmenRepository.findById(id).orElse(null);
     }
 
-    // Login işlemi için:
     public Ogretmen login(String kullaniciAdi, String sifre) {
         return ogretmenRepository.findByKullaniciAdiAndSifre(kullaniciAdi, sifre);
     }
