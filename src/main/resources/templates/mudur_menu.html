@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="tr">
+<head>
+  <title>Müdür Menüsü</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(120deg, #e0e7ff 0%, #fff 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu-card {
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(31, 41, 55, 0.13);
+      background: #fff;
+      padding: 38px 32px 30px 32px;
+      min-width: 340px;
+      width: 100%;
+      max-width: 420px;
+    }
+    .menu-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #3730a3;
+      margin-bottom: 24px;
+      text-align: center;
+      letter-spacing: .5px;
+    }
+    .menu-list {
+      padding-left: 0;
+      margin-bottom: 32px;
+      list-style: none;
+    }
+    .menu-list li {
+      margin-bottom: 16px;
+      border-left: 4px solid #6366f1;
+      background: #f7f8fa;
+      border-radius: 8px;
+      transition: background 0.18s;
+      box-shadow: 0 2px 8px rgba(99,102,241,.04);
+    }
+    .menu-list li:hover {
+      background: #e0e7ff;
+    }
+    .menu-list a {
+      display: block;
+      text-decoration: none;
+      color: #3730a3;
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: color 0.18s;
+    }
+    .menu-list a:hover {
+      color: #1e293b;
+      background: transparent;
+    }
+    .logout-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #6366f1 30%, #3b82f6 100%);
+      color: #fff !important;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: .5px;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.18s;
+    }
+    .logout-btn:hover {
+      background: linear-gradient(90deg, #3730a3 30%, #2563eb 100%);
+      color: #fff;
+    }
+    @media (max-width: 500px) {
+      .menu-card { padding: 18px 4px 22px 4px; min-width: unset; }
+    }
+  </style>
+</head>
+<body>
+<div class="menu-card mx-auto">
+  <div class="menu-title">Müdür Menüsü</div>
+  <ol class="menu-list">
+    <li><a th:href="@{/ogrenci/ekle}">Öğrenci Ekle</a></li>
+    <li><a th:href="@{/ogrenci/sil-sec}">Öğrenci Sil</a></li>
+    <li><a th:href="@{/ogrenciler}">Öğrenci Listele (Not Ortalamalarıyla)</a></li>
+    <li><a th:href="@{/ogretmen/ekle}">Öğretmen Ekle</a></li>
+    <li><a th:href="@{/ogretmen/sil-sec}">Öğretmen Sil</a></li>
+    <li><a th:href="@{/ogretmenler}">Öğretmen Listele</a></li>
+    <li><a th:href="@{/ogrenciye-not-ekle}">Öğrenciye Not Ekle</a></li>
+    <li><a th:href="@{/ogrenci-not-guncelle}">Öğrenci Notunu Güncelle</a></li>
+  </ol>
+  <a th:href="@{/logout}" class="logout-btn">Çıkış</a>
+</div>
+</body>
+</html>

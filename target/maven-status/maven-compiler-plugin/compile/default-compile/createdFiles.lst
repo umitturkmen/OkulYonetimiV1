@@ -1,0 +1,13 @@
+com\okulyonetimi\controller\MudurController.class
+com\okulyonetimi\service\OgretmenService.class
+com\okulyonetimi\model\Mudur.class
+com\okulyonetimi\model\Ogrenci.class
+com\okulyonetimi\controller\OgrenciController.class
+com\okulyonetimi\OkulyonetimiApplication.class
+com\okulyonetimi\repository\OgretmenRepository.class
+com\okulyonetimi\model\Kullanici.class
+com\okulyonetimi\controller\OgretmenController.class
+com\okulyonetimi\controller\LoginController.class
+com\okulyonetimi\repository\OgrenciRepository.class
+com\okulyonetimi\model\Ogretmen.class
+com\okulyonetimi\service\OgrenciService.class
