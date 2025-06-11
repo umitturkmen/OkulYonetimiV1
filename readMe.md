@@ -36,6 +36,7 @@ Okul Yönetim Sistemi; öğrenci, öğretmen ve müdürlerin kolayca yönetilebi
 5. **Giriş Bilgileri:**
    - Sisteme sadece **öğretmen** ve **müdür** olarak giriş yapılabilir.
    - Öğrenci girişi bulunmamaktadır.
+   -Veritabanında kayıtlı müdür bilgisi: kullanıcı adı: mudur - şifre: 1234
 
 6. **Arayüz Özellikleri:**
    - Tüm HTML sayfalar modern, responsive ve Bootstrap ile tasarlanmıştır.
